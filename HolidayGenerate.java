@@ -74,10 +74,9 @@ public class HolidayGenerate {
         // [+]全年的双休周末
         Set<String> yearDoubleWeekend = getWeekDayList(YEAR);
         allHolidays.addAll(yearDoubleWeekend);
-        // [+] 2024年的法定节假日
+        // [+] 法定节假日
         Set<String> legalHolidays = getLegalHoliday();
         allHolidays.addAll(legalHolidays);
-        //修复之前没有把调休日去掉的问题
         List<String> collect = allHolidays.stream().sorted().collect(Collectors.toList());
         return  collect;
     }
